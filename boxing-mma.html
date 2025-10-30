@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boxing & MMA - The Bookie Butcher</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/boxing-mma.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <div class="header-left">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+            </a>
+            <i class="fas fa-utensils logo-icon"></i>
+            <span class="logo-text">Boxing & MMA</span>
+        </div>
+        <div class="header-right">
+            <span class="wallet-balance">$1,250.00</span>
+            <button class="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Desktop Header -->
+    <header class="desktop-header">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="index.html" class="back-link">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+                <i class="fas fa-utensils logo-icon"></i>
+                <span class="logo-text">The Bookie Butcher - Boxing & MMA</span>
+            </div>
+            <div class="header-right">
+                <span class="wallet-balance">$1,250.00</span>
+                <button class="settings-btn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Fighter Selection -->
+        <section class="fighter-selection">
+            <h1 class="page-title">Boxing & MMA Analysis</h1>
+            <p class="page-subtitle">Advanced fight predictions with last 3 fights, weigh-ins, and inside intelligence</p>
+            
+            <div class="sport-toggle">
+                <button class="sport-toggle-btn active" data-sport="boxing">Boxing</button>
+                <button class="sport-toggle-btn" data-sport="mma">MMA</button>
+            </div>
+
+            <div class="upcoming-fights">
+                <h2>Upcoming Fights</h2>
+                <div class="fight-cards">
+                    <div class="fight-card" data-fight-id="001">
+                        <div class="fight-main">
+                            <div class="fighter fighter-a">
+                                <img src="https://via.placeholder.com/80/8B4513/FFFFFF?text=TF" alt="Tyson Fury" class="fighter-photo">
+                                <div class="fighter-info">
+                                    <h3>Tyson Fury</h3>
+                                    <span class="record">33-0-1 (25 KOs)</span>
+                                    <div class="physical">
+                                        <span>6'9"</span>
+                                        <span>277 lbs</span>
+                                        <span>85" reach</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vs-section">
+                                <div class="vs-text">VS</div>
+                                <div class="fight-time">Tonight 10:00 PM ET</div>
+                                <div class="venue">T-Mobile Arena, Las Vegas</div>
+                            </div>
+                            <div class="fighter fighter-b">
+                                <img src="https://via.placeholder.com/80/FF6B35/FFFFFF?text=OU" alt="Oleksandr Usyk" class="fighter-photo">
+                                <div class="fighter-info">
+                                    <h3>Oleksandr Usyk</h3>
+                                    <span class="record">22-0 (14 KOs)</span>
+                                    <div class="physical">
+                                        <span>6'3"</span>
+                                        <span>223 lbs</span>
+                                        <span>78" reach</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fight-details">
+                            <div class="odds-section">
+                                <div class="odds-card">
+                                    <span class="book">PP</span>
+                                    <span class="odds">Tyson Fury -150</span>
+                                    <span class="edge positive">+4.2% edge</span>
+                                </div>
+                                <div class="odds-card">
+                                    <span class="book">FD</span>
+                                    <span class="odds">Oleksandr Usyk +130</span>
+                                    <span class="edge positive">+3.8% edge</span>
+                                </div>
+                            </div>
+                            
+                            <div class="referee-info">
+                                <h4>Referee & Judges</h4>
+                                <div class="ref-details">
+                                    <span>Referee: Kenny Bayless</span>
+                                    <span class="tendency">Tendency: Lets fighters fight, low stoppage rate (18%)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="analyze-fight-btn" onclick="analyzeFight('001')">
+                            <i class="fas fa-chart-line"></i>
+                            Analyze Fight
+                        </button>
+                    </div>
+
+                    <div class="fight-card" data-fight-id="002">
+                        <div class="fight-main">
+                            <div class="fighter fighter-a">
+                                <img src="https://via.placeholder.com/80/DC143C/FFFFFF?text=KM" alt="Kamaru Usman" class="fighter-photo">
+                                <div class="fighter-info">
+                                    <h3>Kamaru Usman</h3>
+                                    <span class="record">20-3 (9 KOs)</span>
+                                    <div class="physical">
+                                        <span>6'0"</span>
+                                        <span>185 lbs</span>
+                                        <span>76" reach</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="vs-section">
+                                <div class="vs-text">VS</div>
+                                <div class="fight-time">Saturday 8:00 PM ET</div>
+                                <div class="venue">T-Mobile Arena, Las Vegas</div>
+                            </div>
+                            <div class="fighter fighter-b">
+                                <img src="https://via.placeholder.com/80/0066CC/FFFFFF?text=MA" alt="Leon Edwards" class="fighter-photo">
+                                <div class="fighter-info">
+                                    <h3>Leon Edwards</h3>
+                                    <span class="record">21-3 (7 KOs)</span>
+                                    <div class="physical">
+                                        <span>5'9"</span>
+                                        <span>170 lbs</span>
+                                        <span>74" reach</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="fight-details">
+                            <div class="odds-section">
+                                <div class="odds-card">
+                                    <span class="book">PP</span>
+                                    <span class="odds">Usman -110</span>
+                                    <span class="edge positive">+6.1% edge</span>
+                                </div>
+                                <div class="odds-card">
+                                    <span class="book">FD</span>
+                                    <span class="odds">Edwards -110</span>
+                                    <span class="edge positive">+5.3% edge</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button class="analyze-fight-btn" onclick="analyzeFight('002')">
+                            <i class="fas fa-chart-line"></i>
+                            Analyze Fight
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fight Analysis Section -->
+        <section class="fight-analysis" id="fightAnalysis" style="display: none;">
+            <div class="analysis-header">
+                <h2>Fight Analysis: <span id="fighterAName"></span> vs <span id="fighterBName"></span></h2>
+                <button class="close-analysis" onclick="closeFightAnalysis()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="analysis-content">
+                <!-- Fighter A Analysis -->
+                <div class="fighter-analysis" id="fighterAAnalysis">
+                    <h3>Fighter A: <span id="fighterADetailedName"></span></h3>
+                    <div class="last-three-fights">
+                        <h4>Last 3 Fights</h4>
+                        <div class="fight-history">
+                            <div class="fight-item">
+                                <div class="fight-header">
+                                    <span class="opponent">vs Deontay Wilder</span>
+                                    <span class="result win">WIN - KO 11th Round</span>
+                                    <span class="date">Oct 28, 2024</span>
+                                </div>
+                                <div class="fight-stats">
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Thrown:</span>
+                                        <span class="stat-value">312</span>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Landed:</span>
+                                        <span class="stat-value">186 (59.6%)</span>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label">Jabs:</span>
+                                        <span class="stat-value">124 thrown, 67 landed</span>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label">Power Punches:</span>
+                                        <span class="stat-value">188 thrown, 119 landed</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fight-item">
+                                <div class="fight-header">
+                                    <span class="opponent">vs Deontay Wilder</span>
+                                    <span class="result win">WIN - KO 10th Round</span>
+                                    <span class="date">Jan 13, 2024</span>
+                                </div>
+                                <div class="fight-stats">
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Thrown:</span>
+                                        <span class="stat-value">298</span>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Landed:</span>
+                                        <span class="stat-value">192 (64.4%)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="fight-item">
+                                <div class="fight-header">
+                                    <span class="opponent">vs Dillian Whyte</span>
+                                    <span class="result win">WIN - TKO 6th Round</span>
+                                    <span class="date">Apr 23, 2023</span>
+                                </div>
+                                <div class="fight-stats">
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Thrown:</span>
+                                        <span class="stat-value">267</span>
+                                    </div>
+                                    <div class="stat-group">
+                                        <span class="stat-label">Punches Landed:</span>
+                                        <span class="stat-value">201 (75.3%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="physical-data">
+                        <h4>Physical & Weigh-in Data</h4>
+                        <div class="physical-stats">
+                            <div class="physical-item">
+                                <span class="label">Height:</span>
+                                <span class="value">6'9"</span>
+                            </div>
+                            <div class="physical-item">
+                                <span class="label">Reach:</span>
+                                <span class="value">85"</span>
+                            </div>
+                            <div class="physical-item">
+                                <span class="label">Stance:</span>
+                                <span class="value">Orthodox</span>
+                            </div>
+                            <div class="physical-item">
+                                <span class="label">Weigh-in Weight:</span>
+                                <span class="value">273 lbs</span>
+                            </div>
+                            <div class="physical-item">
+                                <span class="label">Fight Night Weight:</span>
+                                <span class="value">277 lbs (+4 lbs rehydration)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="power-metrics">
+                        <h4>Power Metrics</h4>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <span class="metric-label">Power Index</span>
+                                <span class="metric-value">45%</span>
+                                <span class="metric-desc">% of power punches landed</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Stoppage Rate</span>
+                                <span class="metric-value">67%</span>
+                                <span class="metric-desc">Wins by KO/TKO</span>
+                            </div>
+                            <div class="metric-card">
+                                <span class="metric-label">Avg. Fight Time</span>
+                                <span class="metric-value">7.2 rounds</span>
+                                <span class="metric-desc">When he wins</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Model Predictions -->
+                <div class="model-predictions">
+                    <h3>Model Predictions</h3>
+                    <div class="prediction-cards">
+                        <div class="prediction-card">
+                            <h4>Win Method</h4>
+                            <div class="prediction-item">
+                                <span>Decision:</span>
+                                <span class="prediction-value">25%</span>
+                            </div>
+                            <div class="prediction-item">
+                                <span>KO/TKO:</span>
+                                <span class="prediction-value">75%</span>
+                            </div>
+                        </div>
+
+                        <div class="prediction-card">
+                            <h4>Total Rounds</h4>
+                            <div class="prediction-item">
+                                <span>Over 10.5:</span>
+                                <span class="prediction-value">55%</span>
+                            </div>
+                            <div class="prediction-item">
+                                <span>Under 10.5:</span>
+                                <span class="prediction-value">45%</span>
+                            </div>
+                        </div>
+
+                        <div class="prediction-card">
+                            <h4>Fight Goes Distance</h4>
+                            <div class="prediction-item">
+                                <span>Yes (12 rounds):</span>
+                                <span class="prediction-value">30%</span>
+                            </div>
+                            <div class="prediction-item">
+                                <span>No:</span>
+                                <span class="prediction-value">70%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inside Intelligence -->
+                <div class="inside-intelligence">
+                    <h3>Inside Intelligence (Legal Sources)</h3>
+                    <div class="intelligence-items">
+                        <div class="intel-item">
+                            <div class="intel-header">
+                                <span class="source">@TysonFury</span>
+                                <span class="time">2 hours ago</span>
+                                <span class="confidence high">High Confidence</span>
+                            </div>
+                            <div class="intel-content">
+                                "Feeling stronger than ever. This camp has been different. I'm ready to prove I'm the best heavyweight in the world."
+                            </div>
+                        </div>
+
+                        <div class="intel-item">
+                            <div class="intel-header">
+                                <span class="source">@FrankWarren</span>
+                                <span class="time">4 hours ago</span>
+                                <span class="confidence high">High Confidence</span>
+                            </div>
+                            <div class="intel-content">
+                                "Tyson has looked incredible in sparring. His speed and movement have been on another level. He's in the best shape of his career."
+                            </div>
+                        </div>
+
+                        <div class="intel-item">
+                            <div class="intel-header">
+                                <span class="source">Vegas Insider</span>
+                                <span class="time">1 day ago</span>
+                                <span class="confidence medium">Medium Confidence</span>
+                            </div>
+                            <div class="intel-content">
+                                "Large bets coming in on Fury late money. Sharp money is on the over 10.5 rounds market."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="place-bet-btn">Place Bet on Prize Picks</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+    <script src="js/boxing-mma.js"></script>
+</body>
+</html>
